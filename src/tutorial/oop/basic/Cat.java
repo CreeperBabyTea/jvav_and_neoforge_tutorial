@@ -4,6 +4,7 @@ public class Cat {
     public static final String SPECIES = "cat";
 
     private final String name;
+    public String sound = "nya~";
 
     {
         System.out.println("Initializer Block!");
@@ -19,13 +20,14 @@ public class Cat {
         this("wild");
     }
 
-    public String getSound() {
-        return name + ":nya~";
+    public String voice() {
+        return name + ':' + sound;
     }
 
     public static void main(String... args) {
         var nachoneko = new Cat("Amashiro Natsuki");
-        System.out.println(nachoneko.getSound());
+        System.out.println(nachoneko.voice());
     }
+
     /* ... */
 }

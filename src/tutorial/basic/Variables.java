@@ -27,6 +27,13 @@ public class Variables {
         String user1 = "somebody";
         String user2 = new String("somebody");
 
+        String user3;
+
+        user3 = user1;
+
+        System.out.println(user1);
+        System.out.println(user2);
+
         System.out.println(user1 == user2);   //false
         System.out.println(user1.equals(user2));   //true
 

@@ -1,3 +1,1 @@
-# 对，JVAV和NeoForge的基础教程
-
-readme
+# [对，JVAV和NeoForge的基础教程](大纲.md)
