@@ -29,7 +29,7 @@ Java具有跨平台、面向对象、简单安全等特点。
 - JRE即Java运行环境。JRE包含JVM，且在JVM的基础上又添加了Java基本库(如系统api、集合api、网络api等)
   。Windows平台上，JRE的核心可运行文件是java.exe。
 - JDK即Java开发工具包。JDK包含JRE，且在JRE的基础上添加了一系列用于编译和归档的软件。Windows平台上，JDK提供了javac.exe以供编译，jar.exe以供归档。
-  ![](../assets/chapter1/section1/s1_jvm_jre_jdk.png "JVM、JRE、JDK的包含关系")
+  ![](../assets/chapter1/section1/jvm_jre_jdk.png "JVM、JRE、JDK的包含关系")
 
 JDK由不同公司维护，其中我们使用Oracle的OpenJDK。
 
@@ -58,16 +58,16 @@ ok，[前往Oracle官网下载JDK](https://www.oracle.com/cn/java/technologies/d
 
 个人推荐使用IDEA。
 安装完成，进入IDEA后，我们看到如下界面：
-![](../assets/chapter1/section1/s1_IDEA启动界面.png "IDEA启动界面")  
+![](../assets/chapter1/section1/IDEA启动界面.png "IDEA启动界面")  
 点击右上角新建项目，选择java项目，自己选好名称和位置，其他照着图选
-![](../assets/chapter1/section1/s1_创建项目.png "创建项目")  
+![](../assets/chapter1/section1/创建项目.png "创建项目")  
 随后我们应该进入了IDEA的主界面：
-![](../assets/chapter1/section1/s1_IDEA主界面.png "主界面")  
+![](../assets/chapter1/section1/IDEA主界面.png "主界面")  
 这个界面中，左侧是主要的功能性按钮(如文件、运行、调试、构建、git等)。src文件夹就是我们写代码的根目录。  
 我们打开Main.java，点击右上角的三角形运行当前文件。
-![](../assets/chapter1/section1/s1_运行当前文件.png)  
+![](../assets/chapter1/section1/运行当前文件.png)  
 然后应该就能看到底下的输出了。
-![](../assets/chapter1/section1/s1_运行结果.png)
+![](../assets/chapter1/section1/运行结果.png)
 ok，Main.java的使命完成了，你愿意的话可以删掉他了。以后我们不会再用到Main.java了。
 
 以后我提到java文件时，就不再提后缀名了。

@@ -4,7 +4,14 @@ public class Cat {
     public static final String SPECIES = "cat";
 
     private final String name;
-    public String sound = "nya~";
+    /**
+     * unit: kg
+     */
+    public int weight = 2;
+    /**
+     * unit: year
+     */
+    public int age = 3;
 
     {
         System.out.println("Initializer Block!");
@@ -21,7 +28,7 @@ public class Cat {
     }
 
     public String voice() {
-        return name + ':' + sound;
+        return name + " meowed: nya❤~";
     }
 
     public static void main(String... args) {

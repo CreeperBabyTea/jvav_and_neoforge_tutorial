@@ -1,17 +1,15 @@
 package tutorial.oop.advanced.encapsulation;
 
-import tutorial.oop.basic.Cat;
-import tutorial.oop.basic.Shelter;
-
 public class EncapsulatedCat {
-    public static final String SPECIES = "cat";
-
     private final String name;
-    private String sound = "nya~";
-
-    {
-        System.out.println("Initializer Block!");
-    }
+    /**
+     * unit: kg
+     */
+    public int weight = 2;
+    /**
+     * unit: year
+     */
+    public int age = 3;
 
     public EncapsulatedCat(String name) {
         this.name = name;
@@ -23,11 +21,23 @@ public class EncapsulatedCat {
     }
 
     public String voice() {
-        return name + ':' + sound;
+        return name + " meowed: nya❤~";
     }
 
-    //由于我们不希望sound被改变，所以不提供setSound方法。
-    public String getSound() {
-        return sound;
+    public void setWeight(int weight) {
+        if (weight > 0)
+            this.weight = weight;
+    }
+
+    public void age() {
+        this.age ++;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getAge() {
+        return age;
     }
 }
