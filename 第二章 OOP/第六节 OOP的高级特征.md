@@ -11,7 +11,7 @@
     - 向上转型、向下转型
     - instanceof关键字
     - 方法重写
-- final关键字
+    - final关键字
 
 ## 封装
 
@@ -120,7 +120,7 @@ public class Dog {
 }
 ```
 
-但是这不唐吗，Dog和Cat的类高度相似。因此我我们可以利用**继承**来实现方法的复用。
+但是这很唐，Dog和Cat的类高度相似，因此我我们可以利用**继承**来实现方法的复用。
 
 首先，我们提取Dog和Cat相同的非静态部分：(这里把一些没必要的输出给毙了)
 
@@ -176,13 +176,15 @@ public class Cat extends Animal {
 }
 ```
 
-这里我们注意到了两个新的关键字：extends和super。extends就是标志这个类继承自extends后面的的类。java仅允许单继承，嗯
+这里我们注意到了两个新的关键字：extends和super。extends就是标志这个类继承自extends后面的的类。java仅允许单继承，即一个类只能继承一个父类。
 
 super关键字即父类指代关键字。子类的构造器在调用时，必须先调用父类构造器。对，就是super(你要的参数)。
 如果父类有一个可以访问(也就是说，在你子类的访问范围内)的一个或几个构造器，那么在子类的**每个**构造器中都必须调用**一个**
 父类构造器。
 
 特别的，如果父类有可访问的、无形参的构造器，可以隐去`super();`(会自动调用)；如果父类无可用构造器，则无法继承。
+
+**特别的，枚举类和记录类都不允许继承**
 
 ## 多态
 
@@ -245,3 +247,55 @@ public void detectType(Animal animal) {
         System.out.println("Dog weight: " + dog.getWeight());
 }
 ```
+
+### 方法重写
+
+我们现在为Animal类添加一个onHungry()方法。这里我们希望Cat和Dog的onHungry()实现一些不同的行为，此时我们可以重写这个方法。
+
+在Cat中：
+```java
+@Override
+public void onHungry() {
+    System.out.println("Hunting!");
+}
+```
+
+在Dog中：
+```java 
+@Override
+public void onHungry() {
+    System.out.println("Finding my master!");
+}
+```
+
+这里我们重写了这个方法。当我们调用一个对象的实例方法时，我们调用的时其**最顶层类型的方法**。比如下面这段代码：
+
+```
+Animal animal = new Cat("Nekoha Shizuku");
+animal.onHungry();
+```
+
+你会看到被执行的方法实际上是Cat类重写后的方法。这也就是说，对象在被向上转型时，其类型不会被丢弃。
+无论我们怎么进行转型，Cat的实例永远是Cat的对象。
+
+同时，如果你需要调用父类的方法，也可以使用super关键字，如：
+
+```java
+@Override
+public void onHungry() {
+    super.onHungry();
+    System.out.println("Finding my master!");
+}
+```
+
+需要注意的是，如果存在多级继承，那这种调用只能调用上一级父类，而不能调用父类的父类的方法。如果遇到了这种问题，可以采用方法委托来实现。
+
+### final关键字
+
+现在我们再介绍final关键字的另外两个用途：
+1. 修饰类时，使这个类不可以被继承
+2. 修饰方法时，使这个方法不可以被重写
+
+这很简单，我就不多说了zzz
+
+[返回](../大纲.md)

@@ -1,4 +1,4 @@
-package tutorial.oop.advanced.inheritance;
+package homework.chapter2.advanced;
 
 public class Cat extends Animal {
     public Cat(String name) {
